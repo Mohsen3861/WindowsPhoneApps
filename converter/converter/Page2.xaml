@@ -1,0 +1,56 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="converter.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="12,17,12,0" Grid.RowSpan="2">
+            <TextBlock HorizontalAlignment="Left" Margin="68,161,0,0" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top"/>
+            <TextBox x:Name="Age" HorizontalAlignment="Left" Height="72" Margin="155,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" InputScope="Number" TextChanged="Age_TextChanged"/>
+            <CheckBox x:Name="male" Content="male" HorizontalAlignment="Left" Margin="55,225,0,0" VerticalAlignment="Top" Checked="male_Checked" Foreground="#FF53B93C" BorderBrush="#FF55A455"/>
+            <CheckBox x:Name="female" Content="female" HorizontalAlignment="Left" Margin="204,225,0,0" VerticalAlignment="Top" Checked="female_Checked" Foreground="#FF346BB9" BorderBrush="#FF338387"/>
+            <TextBox x:Name="Height" HorizontalAlignment="Left" Height="72" Margin="155,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" InputScope="Number" TextChanged="Height_TextChanged"/>
+            <TextBox x:Name="Weight" HorizontalAlignment="Left" Height="72" Margin="155,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" InputScope="Number" TextChanged="Weight_TextChanged"/>
+            <TextBlock HorizontalAlignment="Left" Margin="55,334,0,0" TextWrapping="Wrap" Text="Height" VerticalAlignment="Top" Width="95"/>
+            <TextBlock HorizontalAlignment="Left" Margin="55,411,0,0" TextWrapping="Wrap" Text="Weight" VerticalAlignment="Top" Width="95"/>
+            <Button x:Name="ok" Content="OK" HorizontalAlignment="Left" Margin="43,541,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click" IsEnabled="False">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3CBF36" Offset="0"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock Margin="-3,10,0,645" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48" Text="Calorie Calculator"/>
+            <Button x:Name="Clear" Content="Clear" HorizontalAlignment="Left" Margin="221,541,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click_1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red" Offset="0"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
